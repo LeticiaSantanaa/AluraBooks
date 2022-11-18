@@ -1,0 +1,56 @@
+.cabecalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /*Ele da a opção de vc colocar outros atributos como top, left, bottom e top*/
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+.container__imagem{
+    padding: 1em;
+}
+.cabecalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    display: inline-block; /*Permite que eu use width e heigth ali em cima e faz ele aparecer */
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat; /*p/ nao repetir a imagem*/
+    background-position: center; /*coloquei o menu no centro*/
+}
+.lista-menu{
+    display: none; /*Esconde o menu lateral*/
+    position: absolute; /*Permite q vc movimente o seu elemento de acordo com outro q veio antes que tenha position direfente de static */ 
+    top: 100%;
+    width: 60vw; /**aumentei a largura como viewport então ele pega a largura da tela, e nesse caso pegou 60% da largura da tela*/
+}
+.container__botao:checked~.lista-menu{ 
+    /*a pseudoclasse CHECKED verifica se ta preenchido o input checkbox*/
+    /*O ~ vai fazer a condicional:
+    se (o que ta atras dele) ".container__botao" tiver checked
+    ele vai (procurar o que ta na frente) "lista-menu" e vai botar display block pra mostrar */
+    display: block; /*Exibi o menu lateral*/
+}
+
+.lista-menu__titulo, 
+.lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+.lista-menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+.lista-menu__link{
+    background: var(--azul-degrade);
+    /*Peguei no figma: */
+    -webkit-background-clip: text;/*Esses webkits é para que funcione em outros tipos de navegadores*/
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /*Vai colocar a cor do backgroun apenas onde tiver TEXTO e nao na cor de fundo como ta pedindo ali em cima*/
+    text-transform: uppercase; /*o texto vai ficar tudo em letra maiúscula*/
+}
+.container__botao{
+    display: none;
+}
