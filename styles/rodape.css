@@ -38,3 +38,12 @@ hr{
     }
 
 }
+@media screen and (min-width: 1360px) {
+    .lista-rodape{
+        border-left: 1.5px solid var(--cinza-claro);
+        padding-left: 1em;
+    }
+    .rodapé{
+        padding: 3em 0;
+    }
+}

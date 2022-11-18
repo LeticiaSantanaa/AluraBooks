@@ -28,6 +28,9 @@
     font-size: 14px;
     font-weight: 700;
 }
+.favoritos{
+    margin-top: -0.4em;
+}
 @media screen and (min-width: 1024px) {
     .tópicos__titulo{
         font-size: 24px;
@@ -35,4 +38,14 @@
     .tópicos__link{
         font-size: 24px;
     }
+}
+
+@media screen and (min-width: 1360px) {
+    .tópicos{
+        padding:3em 22vw;
+    }
+    .tópicos__item{
+        padding: 0.3em 0;
+    }
+    
 }
