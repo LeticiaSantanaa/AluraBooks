@@ -1,56 +1,102 @@
-.cabecalho{
+.cabeçalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabeçalho {
     background-color: var(--branco);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /*Ele da a opção de vc colocar outros atributos como top, left, bottom e top*/
+    position: relative;
 }
-.container{
+
+.container {
     display: flex;
     align-items: center;
 }
-.container__imagem{
+
+.container__imagem {
     padding: 1em;
 }
-.cabecalho__menu-hamburguer{
-    width: 24px;
-    height: 24px;
-    display: inline-block; /*Permite que eu use width e heigth ali em cima e faz ele aparecer */
-    background-image: url("../img/Menu.svg");
-    background-repeat: no-repeat; /*p/ nao repetir a imagem*/
-    background-position: center; /*coloquei o menu no centro*/
-}
-.lista-menu{
-    display: none; /*Esconde o menu lateral*/
-    position: absolute; /*Permite q vc movimente o seu elemento de acordo com outro q veio antes que tenha position direfente de static */ 
+
+.lista-menu {
+    display: none;
+    position: absolute;
     top: 100%;
-    width: 60vw; /**aumentei a largura como viewport então ele pega a largura da tela, e nesse caso pegou 60% da largura da tela*/
-}
-.container__botao:checked~.lista-menu{ 
-    /*a pseudoclasse CHECKED verifica se ta preenchido o input checkbox*/
-    /*O ~ vai fazer a condicional:
-    se (o que ta atras dele) ".container__botao" tiver checked
-    ele vai (procurar o que ta na frente) "lista-menu" e vai botar display block pra mostrar */
-    display: block; /*Exibi o menu lateral*/
+    width: 60vw;
 }
 
-.lista-menu__titulo, 
-.lista-menu__item{
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
     padding: 1em;
     background-color: var(--branco);
 }
-.lista-menu__titulo{
+
+.lista-menu__titulo {
     color: var(--laranja);
     font-weight: 700;
 }
-.lista-menu__link{
+
+.lista-menu__link {
     background: var(--azul-degrade);
-    /*Peguei no figma: */
-    -webkit-background-clip: text;/*Esses webkits é para que funcione em outros tipos de navegadores*/
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; /*Vai colocar a cor do backgroun apenas onde tiver TEXTO e nao na cor de fundo como ta pedindo ali em cima*/
-    text-transform: uppercase; /*o texto vai ficar tudo em letra maiúscula*/
+    background-clip: text;
+    text-transform: uppercase;
 }
-.container__botao{
+
+.container__botao {
     display: none;
+}
+.container__titulo{
+    display: none; /*para nao aparecer quando tiver tamanho mobile*/
+}
+.opções{
+    display: none;
+}
+@media screen and (min-width:1024px) {
+    .container__titulo, .container__titulo--negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+    .container__titulo{
+        font-weight: 400;
+        display: block;
+    }
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+    .opções{
+        display: flex;
+    }
+    .opções__item{
+        padding: 1em;
+        text-transform: uppercase;
+    }
+    .opções__link{
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__imagem--transparente{
+        display: none;
+    }
+    .cabeçalho__menu-hamburguer{
+        display: none;
+    }
+    .opções__botao:checked~.lista-menu{
+        display: block;
+        width: auto;
+    }
+    .opções__botao{
+        display: none;
+    }
 }
