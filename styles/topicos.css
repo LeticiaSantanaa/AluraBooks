@@ -28,6 +28,10 @@
     font-size: 14px;
     font-weight: 700;
 }
+.tópicos__link:hover{
+    background-color: var(--cinza-claro);
+
+}
 .favoritos{
     margin-top: -0.4em;
 }
