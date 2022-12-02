@@ -72,6 +72,9 @@
     font-weight: 700;
     text-decoration: none;
 }
+.botões__ancora:hover {
+    background-color: var(--cinza-claro);
+}
 
 @media screen and (min-width:1024px) {
     .carrossel__titulo{
